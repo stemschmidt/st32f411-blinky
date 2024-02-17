@@ -28,7 +28,7 @@ void main(void)
 		return;
 	}
 
-	ret = gpio_pin_configure_dt(&led, GPIO_OUTPUT_ACTIVE);
+	ret = gpio_pin_configure_dt(&led, GPIO_OUTPUT_LOW);
 	if (ret < 0) {
 		return;
 	}
@@ -39,6 +39,6 @@ void main(void)
 			return;
 		}
 		LOG_INF(".");
-		k_msleep(1000);
+		k_msleep(500);
 	}
 }

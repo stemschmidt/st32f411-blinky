@@ -16,7 +16,12 @@
             "cwd": "${workspaceRoot}",
             "executable": "application/build/zephyr/zephyr.elf",
             "rtos": "zephyr",
-            "runToEntryPoint": "main"
+            "runToEntryPoint": "main",
+            "overrideLaunchCommands": [
+                "monitor reset 0",
+                "-target-download",
+                "monitor reset 0"
+            ]
         }
     ]
 }
