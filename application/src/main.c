@@ -1,11 +1,11 @@
-#include <zephyr.h>
 #include <device.h>
 #include <devicetree.h>
+#include <drivers/eeprom.h>
 #include <drivers/gpio.h>
 #include <drivers/sensor.h>
-#include <drivers/eeprom.h>
-#include <stdio.h>
 #include <logging/log.h>
+#include <stdio.h>
+#include <zephyr.h>
 
 #include <stdio.h>
 
@@ -20,25 +20,24 @@ static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(LED0_NODE, gpios);
 LOG_MODULE_REGISTER(main);
 /* The devicetree node identifier for the "led0" alias. */
 
-void main(void)
-{
-	int ret;
+void main(void) {
+  int ret;
 
-	if (!device_is_ready(led.port)) {
-		return;
-	}
+  if (!device_is_ready(led.port)) {
+    return;
+  }
 
-	ret = gpio_pin_configure_dt(&led, GPIO_OUTPUT_LOW);
-	if (ret < 0) {
-		return;
-	}
+  ret = gpio_pin_configure_dt(&led, GPIO_OUTPUT_LOW);
+  if (ret < 0) {
+    return;
+  }
 
-	while (1) {
-		ret = gpio_pin_toggle_dt(&led);
-		if (ret < 0) {
-			return;
-		}
-		LOG_INF(".");
-		k_msleep(500);
-	}
+  while (1) {
+    ret = gpio_pin_toggle_dt(&led);
+    if (ret < 0) {
+      return;
+    }
+    LOG_INF(".");
+    k_msleep(500);
+  }
 }
