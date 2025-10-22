@@ -1,7 +1,7 @@
 //devcontainer.json
 {
-    "name": "nrf Connect SDK",
-    "image": "zephyrprojectrtos/zephyr-build:v0.23.3",
+    "name": "Zephyr Dev Environment for ST32F411",
+    "image": "zephyrprojectrtos/zephyr-build:v0.26.18", // see https://github.com/zephyrproject-rtos/docker-image/tree/v0.28.6
     "postStartCommand": "/bin/bash",
 
     "settings": {

@@ -3,14 +3,18 @@ manifest:
   # feature used below was introduced then.
   version: 0.12
 
-  # "projects" is a list of git repositories which make up the NCS
-  # source code.
+  # "projects" is a list of git repositories which make up the project
   projects:
-
-    - name: zephyrproject
+    - name: zephyr
       url: https://github.com/zephyrproject-rtos/zephyr.git
-      revision: v3.0.0
-      import: true
+      revision: v3.7.0 # LTS3 (see https://docs.zephyrproject.org/latest/releases/index.html)
+      import:
+        name-allowlist: # select what we need
+          - cmsis
+          - hal_stm32
+          - mcuboot
+          - segger
+          - zephyr
 
   self:
     # This repository should be cloned to application.

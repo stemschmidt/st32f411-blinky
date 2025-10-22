@@ -10,7 +10,7 @@
             "request": "launch",
             "servertype": "external",
             "gdbTarget": "host.docker.internal:2331",
-            "name": "Jlink",
+            "name": "Debug ST32F411 blinky",
             "device": "STM32F411RE",
             "interface": "swd",
             "cwd": "${workspaceRoot}",
