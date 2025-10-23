@@ -4,16 +4,29 @@
     "image": "zephyrprojectrtos/zephyr-build:v0.26.18", // see https://github.com/zephyrproject-rtos/docker-image/tree/v0.28.6
     "postStartCommand": "/bin/bash",
 
-    "settings": {
-        "terminal.integrated.profiles.linux": {
-            "bash": {
-                "path": "bash",
-                "icon": "terminal-bash"
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cmake-tools",
+                "twxs.cmake",
+                "ms-python.python",
+                "mcu-debug.debug-tracker-vscode",
+                "mcu-debug.memory-view",
+                "mcu-debug.rtos-views",
+                "mcu-debug.peripheral-viewer",
+                "marus25.cortex-debug"
+            ],
+            "settings": {
+                "terminal.integrated.profiles.linux": {
+                    "bash": {
+                        "path": "bash",
+                        "icon": "terminal-bash"
+                    }
+                }
             }
         }
     },
-    
-    "extensions": ["marus25.cortex-debug"],
 
     "remoteUser": "user",
 
