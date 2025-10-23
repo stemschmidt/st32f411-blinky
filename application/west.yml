@@ -15,6 +15,10 @@ manifest:
           - mcuboot
           - segger
           - zephyr
+    - name: cmsis-svd-data
+      url: https://github.com/cmsis-svd/cmsis-svd-data.git
+      path: modules/debug/cmsis-svd
+      revision: main
 
   self:
     # This repository should be cloned to application.

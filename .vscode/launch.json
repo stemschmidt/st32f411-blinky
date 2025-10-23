@@ -15,6 +15,7 @@
             "interface": "swd",
             "cwd": "${workspaceRoot}",
             "executable": "application/build/zephyr/zephyr.elf",
+            "svdFile": "modules/debug/cmsis-svd/data/STMicro/STM32F411.svd",
             "rtos": "zephyr",
             "runToEntryPoint": "main",
             "overrideLaunchCommands": [
